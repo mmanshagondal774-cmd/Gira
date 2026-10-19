@@ -36,9 +36,13 @@ export default {
         return;
       }
 
-      await handlePrefixCommand(message, client);
+      
+await handlePrefixCommand(message, client);
 
-      await handleLeveling(message, client);
+await handleAfkMessage(message);
+
+await handleLeveling(message, client);
+
     } catch (error) {
       logger.error('Error in messageCreate event:', error);
     }
